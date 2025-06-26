@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your LinkedIn QR Code</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Your LinkedIn QR Code</h1>
+    <img src="{{ qr_data }}" alt="LinkedIn QR Code">
+    <p><a href="{{ qr_data }}" download="linkedin_qr.png">Download QR Code</a></p>
+    <p><a href="{{ url_for('index') }}">Generate another</a></p>
+  </div>
+</body>
+</html>
