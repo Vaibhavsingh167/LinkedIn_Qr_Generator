@@ -28,6 +28,7 @@ def is_valid_linkedin_url(url: str) -> bool:
 def index():
     if request.method == 'POST':
         url = request.form.get('linkedin_url', '').strip()
+        border_size=request.form.get('qrcode_border','')
         if not is_valid_linkedin_url(url):
             flash('Please enter a valid LinkedIn profile URL.', 'error')
             return redirect(url_for('index'))
@@ -37,11 +38,11 @@ def index():
             version=1,
             error_correction=qrcode.constants.ERROR_CORRECT_H,
             box_size=10,
-            border=4,
+            border=border_size,
         )
         qr.add_data(url)
         qr.make(fit=True)
-        img = qr.make_image(fill_color="black", back_color="white")
+        img = qr.make_image(fill_color="blue", back_color="white")
 
         # encode to base64 for embedding
         buffer = io.BytesIO()
