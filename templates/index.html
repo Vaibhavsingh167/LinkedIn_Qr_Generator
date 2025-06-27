@@ -19,9 +19,10 @@
       {% endif %}
     {% endwith %}
     <form method="post">
-      <label for="linkedin_url">LinkedIn Profile URL:</label>
+      <p>Enter your LinkedIn profile URL below-</p>
       <input type="url" id="linkedin_url" name="linkedin_url" placeholder="https://www.linkedin.com/in/yourprofile" required>
-      <button type="submit">Generate QR Code</button>
+      <input type="number" id="border" name="qrcode_border" placeholder="Input Border Size (5-20)" required>
+      <button type="submit">Generate QR Code</button>      
     </form>
   </div>
 </body>
